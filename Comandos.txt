@@ -1,1 +1,99 @@
-teste
+////////////////////////////////////////////////////////////
+////////////////  CERFIFICAÇÃO LINUX LPIC-1 I   ////////////
+////////////////////////////////////////////////////////////
+
+Obs.: o que é o SHELL, é uma interface entre o usuário e o Linux
+
+
+//////////////////////////////////////
+///////////    Comandos  /////////////
+//////////////////////////////////////
+
+- O Shell mais usado e que será usado no curso é o BASH
+
+
+#######################################################################
+////////  echo  ////////////
+echo mostra dados na tela
+
+--> echo teste = mostra teste na tela
+--> echo $SHELL = mostra o shell que está sendo usado
+--> echo $PATH = /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin (mostra os diretórios que estão na varivel PATH, busca todos os comandos nestes paths)
+
+
+
+#######################################################################
+/////////  type   ////////////
+type mais um comando, mostra se ele é externo do bash ou de outro comando
+
+--> type echo = echo is a shell builting
+--> type clear = clear is hashed (/usr/bin/clear)
+
+
+#######################################################################
+Trabalhando com variaveis.
+
+declarar variavel
+--> TESTE=valor
+
+mostrar variavel
+--> echo $TESTE = valor
+
+porem está varivel está declarada somente neste sessão, se sair do terminal ela morre
+
+Para que ela fique visivel para outros serviços, usasse export, ela fica global, mas
+só para processos filhos deste primeiro, se eu abrir outro terminal, ela não está
+acessivel, pois um novo terminal não é filho do anterior
+--> export TESTE
+
+// Ver variveis locais e exportadas
+--> set | less = mostra todas as variveis iniciadas automaticas, criadas e exportadas
+
+--> env = mostra as varivaeis que são globais
+
+--> env TESTE=Masiero ./script_variavel.sh = nesta execução apenas, será alterada o valor da variável TESTE
+
+
+// Remover variavel
+--> unset TESTE
+
+
+//// VARIAVEIS INTERESSANTES DE SE CONHECER
+--> HISTFILE = mostra caminho de histórico de comandos
+--> HISTFILESIZE = tamanho maximo do arquivo
+--> HISTSIZE = quantidade maxima de linhas no arquivo
+--> LOGNAME = nome de quem fez o login
+--> TERM = mostra qual terminal que entrei (xterm-256color) modo grafico
+
+
+// Existem algumas variaveis de ambiente que são criadas dinamicamentes pelo SHELL
+--> echo $$ = mostra o pid do shell atual
+--> echo $! = mostra o pid do ultimo processo rodado em backgroud
+--> echo $? = mostra o retorno do ultimo processo, '0' retornou com sucesso, diferente disso é erro
+--> echo ~ = o til mostra o caminho do home do usuário
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
