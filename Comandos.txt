@@ -31,7 +31,7 @@ type mais um comando, mostra se ele é externo do bash ou de outro comando
 
 
 #######################################################################
-Trabalhando com variaveis.
+///////// Trabalhando com variaveis. ////////////
 
 declarar variavel
 --> TESTE=valor
@@ -74,7 +74,43 @@ acessivel, pois um novo terminal não é filho do anterior
 
 
 
+#######################################################################
+/////// Trabalhando com comandos sequenciais  /////////////////////
 
+ls /tmp/teste && echo Linux --> so executa o segundo se o primeiro funcionou
+
+ls /tmp/teste || echo Linux --> so executa o segundo se o primeiro FALHAR 
+
+!! -> executa o ultimo comando
+
+! + numero do comando do HISTOY
+
+! + mais string --> executara o ultimo comando que ele achou a string
+
+history -c --> limpa o arquivo de historico
+
+
+whatis fwupdate --> mostra a descricao do comando "fwupdate"
+
+uname --> mostra informacoes do sistema
+
+
+#######################################################################
+///////// Trabalhando na linha de comando - Quoting(proteger strings)  ///////////////
+
+echo * --> mostra o nome de todos os arquivos
+
+"" --> protege tudo, menos $ ` /
+
+'' --> protege tudo
+
+#######################################################################
+///////// Trabalhando na linha de comando - Which
+(procura o(s) arquivo dentro de diretorios no PATH que contem o comando)
+
+which echo --> saida = /bin/echo
+
+which ls --> saida = /bin/ls
 
 
 
